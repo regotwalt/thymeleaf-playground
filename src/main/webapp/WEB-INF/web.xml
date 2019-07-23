@@ -5,6 +5,18 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
+    <!-- Basic Filter Logging Hits -->
+    <filter>
+        <filter-name>RequestLogging</filter-name>
+        <filter-class>com.rachelgotwalt.filter.RequestLoggingFilter</filter-class>
+    </filter>
+
+    <!-- Mapping Filter to Base URL -->
+    <filter-mapping>
+        <filter-name>RequestLogging</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
     <!-- Basic Servlet Displaying a Message -->
     <servlet>
         <servlet-name>helloWorldServlet</servlet-name>
